@@ -11,7 +11,7 @@ class StateManagement extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: AppRoutes.splash,
+      initialRoute: AppRoutes.home,
       getPages: AppPages.pages,
       initialBinding: MainBinding(),
       theme: ThemeData(fontFamily: 'Inter')

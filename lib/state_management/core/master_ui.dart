@@ -1,4 +1,4 @@
-class MasterData {
+class MasterUI {
   //image
   static String imageDir = 'assets/images';
   static String wallpaper1 = '$imageDir/wall1.png';
