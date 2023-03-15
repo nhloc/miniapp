@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:miniapp/state_management/state_management.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const StateManagement());
 }
 
 class MyApp extends StatelessWidget {
