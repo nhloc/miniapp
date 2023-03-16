@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
+import 'package:get/get.dart';
 import 'package:miniapp/state_management/core/constants.dart';
-import 'package:miniapp/state_management/core/master_ui.dart';
+import 'package:miniapp/state_management/core/default_data.dart';
+import 'package:miniapp/state_management/presentation/restaurant/detail/restaurant_detail_screen.dart';
+import 'package:miniapp/state_management/presentation/restaurant/main/restaurant_page_card.dart';
+import 'package:miniapp/state_management/presentation/restaurant/main/restaurant_pageview.dart';
+
 
 class RestaurantScreen extends StatefulWidget {
   const RestaurantScreen({super.key});
@@ -12,15 +15,16 @@ class RestaurantScreen extends StatefulWidget {
 }
 
 class _RestaurantScreenState extends State<RestaurantScreen> {
+  List bestrestaurant = DefaultData.bestrestaurant;
+  List newrestaurant = DefaultData.newrestaurant;
+  List allrestaurant = DefaultData.allrestaurant;
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        SliverPadding(
-          padding: const EdgeInsets.symmetric(
-              horizontal: defautltHorizontal, vertical: defautltVertical),
-          sliver: SliverToBoxAdapter(
-              child: Image.asset('${MasterUI.imageDir}/image1.jpg')),
+        const SliverPadding(
+          padding: EdgeInsets.symmetric(vertical: defautltVertical),
+          sliver: SliverToBoxAdapter(child: RestaurantPageView()),
         ),
         SliverPadding(
           padding: const EdgeInsets.symmetric(horizontal: defautltHorizontal),
@@ -33,51 +37,111 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                 style: TextStyle(
                     fontSize: defautltTextSize16, fontWeight: FontWeight.bold),
               ),
-              TextButton(onPressed: () {}, child: Text('See more'))
+              TextButton(
+                  onPressed: () {
+                    Get.to(const RestaurantDetailScreen(title: 'Best Choice'));
+                  },
+                  child: const Text('See more'))
             ],
           )),
         ),
         SliverPadding(
           padding: const EdgeInsets.symmetric(horizontal: defautltHorizontal),
           sliver: SliverToBoxAdapter(
-              child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+              child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+                children: List.generate(
+              bestrestaurant.length,
+              (index) => Padding(
+                  padding: const EdgeInsets.only(right: 10),
+                  child: RestaurantCard(
+                    name: bestrestaurant[index]["name"],
+                    address: bestrestaurant[index]["address"],
+                    image: bestrestaurant[index]["image"],
+                  )),
+            )),
+          )),
+        ),
+        SliverPadding(
+          padding: const EdgeInsets.symmetric(horizontal: defautltHorizontal),
+          sliver: SliverToBoxAdapter(
+              child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SizedBox(
-                width: 200,
-                child: Image.asset('${MasterUI.imageDir}/image4.jpg'),
-              ),
               const Text(
-                'Name Restaurant',
-                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                'New Restaurant',
+                style: TextStyle(
+                    fontSize: defautltTextSize16, fontWeight: FontWeight.bold),
               ),
-              const Text('Address'),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  RatingBar.builder(
-                    itemSize: 12,
-                    initialRating: 4.5,
-                    minRating: 1,
-                    direction: Axis.horizontal,
-                    allowHalfRating: true,
-                    itemCount: 5,
-                    itemPadding: const EdgeInsets.symmetric(horizontal: 0.5),
-                    itemBuilder: (context, _) => const Icon(
-                      Icons.star,
-                      color: Colors.amber,
-                    ),
-                    onRatingUpdate: (rating) {},
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 5),
-                    child: Text('Free Ship', style: TextStyle(fontSize: 12)),
-                  )
-                ],
-              )
+              TextButton(
+                  onPressed: () {
+                    Get.to(
+                        const RestaurantDetailScreen(title: 'New Restaurant'));
+                  },
+                  child: const Text('See more'))
             ],
           )),
-        )
+        ),
+        SliverPadding(
+          padding: const EdgeInsets.symmetric(horizontal: defautltHorizontal),
+          sliver: SliverToBoxAdapter(
+              child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+                children: List.generate(
+              newrestaurant.length,
+              (index) => Padding(
+                  padding: const EdgeInsets.only(right: 10),
+                  child: RestaurantCard(
+                    name: newrestaurant[index]["name"],
+                    address: newrestaurant[index]["address"],
+                    image: newrestaurant[index]["image"],
+                  )),
+            )),
+          )),
+        ),
+        SliverPadding(
+          padding: const EdgeInsets.symmetric(horizontal: defautltHorizontal),
+          sliver: SliverToBoxAdapter(
+              child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text(
+                'All Restaurant',
+                style: TextStyle(
+                    fontSize: defautltTextSize16, fontWeight: FontWeight.bold),
+              ),
+              TextButton(
+                  onPressed: () {
+                    Get.to(
+                        const RestaurantDetailScreen(title: 'All Restaurant'));
+                  },
+                  child: const Text('See more'))
+            ],
+          )),
+        ),
+        SliverPadding(
+          padding: const EdgeInsets.symmetric(horizontal: defautltHorizontal),
+          sliver: SliverToBoxAdapter(
+              child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+                children: List.generate(
+              4,
+              (index) => Padding(
+                  padding: const EdgeInsets.only(right: 10),
+                  child: RestaurantCard(
+                    name: allrestaurant[index]["name"],
+                    address: allrestaurant[index]["address"],
+                    image: allrestaurant[index]["image"],
+                  )),
+            )),
+          )),
+        ),
+        const SliverPadding(
+          padding: EdgeInsets.symmetric(vertical: defautltHorizontal),
+        ),
       ],
     );
   }

@@ -89,6 +89,28 @@ class DefaultData {
       "name": "Pizza Y",
       "image": "assets/images/image3.jpg",
       "address": "202 Nguyen Van Cu, An Hoa Ward, Ninh Kieu District, Can Tho"
+    },
+    {
+      "id": 7,
+      "code": "001",
+      "name": "Pizza ZZ",
+      "image": "assets/images/image1.jpg",
+      "address": "202 Nguyen Van Cu, An Hoa Ward, Ninh Kieu District, Can Tho"
+    },
+    {
+      "id": 8,
+      "code": "002",
+      "name": "Pizza Pizza",
+      "image": "assets/images/image2.jpg",
+      "address":
+          "2nd Floor, Lot L2 - 04 Sense City, 1 Hoa Binh, Tan An Ward, Ninh Kieu District, Can Tho"
+    },
+    {
+      "id": 9,
+      "code": "003",
+      "name": "Pizza C",
+      "image": "assets/images/image3.jpg",
+      "address": "202 Nguyen Van Cu, An Hoa Ward, Ninh Kieu District, Can Tho"
     }
   ];
   static const food = [
