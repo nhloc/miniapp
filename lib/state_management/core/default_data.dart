@@ -1,3 +1,6 @@
+import 'package:miniapp/state_management/domain/food.dart';
+import 'package:miniapp/state_management/domain/food_category.dart';
+
 class DefaultData {
   static const bestrestaurant = [
     {
@@ -113,84 +116,307 @@ class DefaultData {
       "address": "202 Nguyen Van Cu, An Hoa Ward, Ninh Kieu District, Can Tho"
     }
   ];
-  static const food = [
-    {
-      "id": 1,
-      "code": "001",
-      "name": "Seafood Pizza with Pesto . Sauce",
-      "image": "assets/images/pizza1.jpg",
-      "description":
-          "Shrimp, squid and mushrooms in signature Pesto sauce, topped with Mozzarella cheese",
-      "price": "139.000",
-      "numberlike": "230"
-    },
-    {
-      "id": 2,
-      "code": "002",
-      "name": "Cheese Bacon Pizza",
-      "image": "assets/images/pizza1.jpg",
-      "description":
-          "Smoked Bacon, Mozzarella Cheese, Onions, Sweet Chili Sauce, Cheesy Mayo Sauce, Minced Parsley",
-      "price": "49.000",
-      "numberlike": "130"
-    },
-    {
-      "id": 3,
-      "code": "003",
-      "name": "Grilled Chicken Pizza with Mushrooms",
-      "image": "assets/images/pizza1.jpg",
-      "description":
-          "Grilled Chicken Pizza with Mushrooms on a taste adventure with chicken, mushrooms, pineapple, carrots and sprouts topped with a tangy black pepper sauce",
-      "price": "119.000",
-      "numberlike": "120"
-    },
-    {
-      "id": 4,
-      "code": "004",
-      "name": "Mixed Pizza",
-      "image": "assets/images/pizza1.jpg",
-      "description":
-          "Traditional flavors with beef, bacon, pepperoni, bell peppers, mushrooms and onions, topped with Mozzarella cheese",
-      "price": "119.000",
-      "numberlike": "240"
-    },
-    {
-      "id": 5,
-      "code": "005",
-      "name": "Minced Beef Spaghetti with Tomato Sauce",
-      "image": "assets/images/spaghety.jpg",
-      "description": "Spaghetti with tomato sauce with beef",
-      "price": "139.000",
-      "numberlike": "167"
-    },
-    {
-      "id": 6,
-      "code": "006",
-      "name": "Spaghetti with Bacon with Cream Sauce",
-      "image": "assets/images/spaghety.jpg",
-      "description": "Spaghetti with Cream Sauce With Bacon",
-      "price": "120.000",
-      "numberlike": "210"
-    },
-    {
-      "id": 7,
-      "code": "007",
-      "name": "Grilled Chicken Pizza with Mushrooms",
-      "image": "assets/images/spaghety.jpg",
-      "description":
-          "Grilled Chicken Pizza with Mushrooms on a taste adventure with chicken, mushrooms, pineapple, carrots and sprouts topped with a tangy black pepper sauce",
-      "price": "90.000",
-      "numberlike": "203"
-    },
-    {
-      "id": 8,
-      "code": "008",
-      "name": "Spaghety Bolonaise",
-      "image": "assets/images/spaghety.jpg",
-      "description":
-          "Seafood Fried Rice With Shrimp, Squid, And Fresh Vegetables",
-      "price": "99.000",
-      "numberlike": "123"
-    }
+
+  static List<FoodCategory> foodlist = [
+    FoodCategory(
+      name: "Pizza",
+      foods: [
+        Food(
+          id: 1,
+          name: "Seafood Pizza with Pesto . Sauce",
+          description:
+              "Shrimp, squid and mushrooms in signature Pesto sauce, topped with Mozzarella cheese",
+          price: "139.000",
+          image: "assets/images/pizza1.jpg",
+        ),
+        Food(
+          id: 2,
+          name: "Cheese Bacon Pizza",
+          description:
+              "Shrimp, squid and mushrooms in signature Pesto sauce, topped with Mozzarella cheese",
+          price: "139.000",
+          image: "assets/images/pizza1.jpg",
+        ),
+        Food(
+          id: 3,
+          name: "Grilled Chicken Pizza with Mushrooms",
+          description:
+              "Shrimp, squid and mushrooms in signature Pesto sauce, topped with Mozzarella cheese",
+          price: "139.000",
+          image: "assets/images/pizza1.jpg",
+        ),
+        Food(
+          id: 4,
+          name: "Peach Sauce Five-Fruit Salad",
+          description:
+              "Shrimp, squid and mushrooms in signature Pesto sauce, topped with Mozzarella cheese",
+          price: "165,000",
+          image: "assets/images/pizza1.jpg",
+        ),
+        Food(
+          id: 5,
+          name: "Pizza Four Tastes Du Xuan",
+          description:
+              "Shrimp, squid and mushrooms in signature Pesto sauce, topped with Mozzarella cheese",
+          price: "345,000",
+          image: "assets/images/pizza1.jpg",
+        ),
+        Food(
+          id: 6,
+          name: "NEW YORK PIZZA HALF-HALF",
+          description:
+              "Shrimp, squid and mushrooms in signature Pesto sauce, topped with Mozzarella cheese",
+          price: "235,000",
+          image: "assets/images/pizza1.jpg",
+        ),
+        Food(
+          id: 7,
+          name: "Premium Seafood Pizza",
+          description:
+              "Shrimp, squid and mushrooms in signature Pesto sauce, topped with Mozzarella cheese",
+          price: "165,000",
+          image: "assets/images/pizza1.jpg",
+        ),
+        Food(
+          id: 8,
+          name: "Pizza 5 Special Meat",
+          description:
+              "Shrimp, squid and mushrooms in signature Pesto sauce, topped with Mozzarella cheese",
+          price: "155.000",
+          image: "assets/images/pizza1.jpg",
+        ),
+        Food(
+          id: 9,
+          name: "Pizza 5 Special Meats and Vegetables / Super Deluxe",
+          description:
+              "Shrimp, squid and mushrooms in signature Pesto sauce, topped with Mozzarella cheese",
+          price: "155.000",
+          image: "assets/images/pizza1.jpg",
+        ),
+        Food(
+          id: 10,
+          name: "Pizza Aloha / Aloha",
+          description:
+              "Shrimp, squid and mushrooms in signature Pesto sauce, topped with Mozzarella cheese",
+          price: "155.000",
+          image: "assets/images/pizza1.jpg",
+        )
+      ],
+    ),
+    FoodCategory(
+      name: "Spaghety",
+      foods: [
+        Food(
+          id: 1,
+          name: "Spaghetti and Cream Mushroom Sauce",
+          description:
+              "Shrimp, squid and mushrooms in signature Pesto sauce, topped with Mozzarella cheese",
+          price: "125.000",
+          image: "assets/images/spaghety.jpg",
+        ),
+        Food(
+          id: 2,
+          name: "Minced Beef Spaghetti ",
+          description:
+              "Shrimp, squid and mushrooms in signature Pesto sauce, topped with Mozzarella cheese",
+          price: "125.000",
+          image: "assets/images/spaghety.jpg",
+        ),
+        Food(
+          id: 3,
+          name: "Spicy Spaghetti",
+          description:
+              "Shrimp, squid and mushrooms in signature Pesto sauce, topped with Mozzarella cheese",
+          price: "125.000",
+          image: "assets/images/spaghety.jpg",
+        ),
+        Food(
+          id: 4,
+          name: "Stir fried pasta with spicy sausage",
+          description:
+              "Shrimp, squid and mushrooms in signature Pesto sauce, topped with Mozzarella cheese",
+          price: "125.000",
+          image: "assets/images/spaghety.jpg",
+        ),
+        Food(
+          id: 5,
+          name: "Spaghetti Shrimp Sauce Cream Tomato",
+          description:
+              "Shrimp, squid and mushrooms in signature Pesto sauce, topped with Mozzarella cheese",
+          price: "125.000",
+          image: "assets/images/spaghety.jpg",
+        ),
+        Food(
+          id: 6,
+          name: "Vegetarian Spaghetti Fresh Cream Sauce",
+          description:
+              "Shrimp, squid and mushrooms in signature Pesto sauce, topped with Mozzarella cheese",
+          price: "125.000",
+          image: "assets/images/spaghety.jpg",
+        ),
+        Food(
+          id: 7,
+          name: "Seafood spaghetti tomato sauce",
+          description:
+              "Shrimp, squid and mushrooms in signature Pesto sauce, topped with Mozzarella cheese",
+          price: "125.000",
+          image: "assets/images/spaghety.jpg",
+        ),
+        Food(
+          id: 8,
+          name: "Seafood spaghetti with black pepper sauce",
+          description:
+              "Shrimp, squid and mushrooms in signature Pesto sauce, topped with Mozzarella cheese",
+          price: "125.000",
+          image: "assets/images/spaghety.jpg",
+        ),
+        Food(
+          id: 9,
+          name: "minced beef spaghetti with tomato sauce",
+          description:
+              "Shrimp, squid and mushrooms in signature Pesto sauce, topped with Mozzarella cheese",
+          price: "125.000",
+          image: "assets/images/spaghety.jpg",
+        ),
+        Food(
+          id: 10,
+          name: "Spaghetti with vegetable in marinara sauce",
+          description:
+              "Shrimp, squid and mushrooms in signature Pesto sauce, topped with Mozzarella cheese",
+          price: "125.000",
+          image: "assets/images/spaghety.jpg",
+        )
+      ],
+    ),
+    FoodCategory(
+      name: "Salad",
+      foods: [
+        Food(
+          id: 1,
+          name: "Caesar's salad",
+          description:
+              "Shrimp, squid and mushrooms in signature Pesto sauce, topped with Mozzarella cheese",
+          price: "105.000",
+          image: "assets/images/salad.jpg",
+        ),
+        Food(
+          id: 2,
+          name: "Crispy salmon skin salad with yuzu sauce",
+          description:
+              "Shrimp, squid and mushrooms in signature Pesto sauce, topped with Mozzarella cheese",
+          price: "105.000",
+          image: "assets/images/salad.jpg",
+        ),
+        Food(
+          id: 3,
+          name: "Signature salad",
+          description:
+              "Shrimp, squid and mushrooms in signature Pesto sauce, topped with Mozzarella cheese",
+          price: "105.000",
+          image: "assets/images/salad.jpg",
+        ),
+        Food(
+          id: 4,
+          name: "Boneless Crispy Chicken Salad",
+          description:
+              "Shrimp, squid and mushrooms in signature Pesto sauce, topped with Mozzarella cheese",
+          price: "105.000",
+          image: "assets/images/salad.jpg",
+        ),
+        Food(
+          id: 5,
+          name: "Garden salad dressing with Balsamic vinegar dressing",
+          description:
+              "Shrimp, squid and mushrooms in signature Pesto sauce, topped with Mozzarella cheese",
+          price: "105.000",
+          image: "assets/images/salad.jpg",
+        ),
+      ],
+    ),
+    FoodCategory(
+      name: "Water",
+      foods: [
+        Food(
+          id: 1,
+          name: "Spaghetti and Cream Mushroom Sauce",
+          description:
+              "Shrimp, squid and mushrooms in signature Pesto sauce, topped with Mozzarella cheese",
+          price: "125.000",
+          image: "assets/images/spaghety.jpg",
+        ),
+        Food(
+          id: 2,
+          name: "Minced Beef Spaghetti ",
+          description:
+              "Shrimp, squid and mushrooms in signature Pesto sauce, topped with Mozzarella cheese",
+          price: "125.000",
+          image: "assets/images/spaghety.jpg",
+        ),
+        Food(
+          id: 3,
+          name: "Spicy Spaghetti",
+          description:
+              "Shrimp, squid and mushrooms in signature Pesto sauce, topped with Mozzarella cheese",
+          price: "125.000",
+          image: "assets/images/spaghety.jpg",
+        ),
+        Food(
+          id: 4,
+          name: "Stir fried pasta with spicy sausage",
+          description:
+              "Shrimp, squid and mushrooms in signature Pesto sauce, topped with Mozzarella cheese",
+          price: "125.000",
+          image: "assets/images/spaghety.jpg",
+        ),
+        Food(
+          id: 5,
+          name: "Spaghetti Shrimp Sauce Cream Tomato",
+          description:
+              "Shrimp, squid and mushrooms in signature Pesto sauce, topped with Mozzarella cheese",
+          price: "125.000",
+          image: "assets/images/spaghety.jpg",
+        ),
+        Food(
+          id: 6,
+          name: "Vegetarian Spaghetti Fresh Cream Sauce",
+          description:
+              "Shrimp, squid and mushrooms in signature Pesto sauce, topped with Mozzarella cheese",
+          price: "125.000",
+          image: "assets/images/spaghety.jpg",
+        ),
+        Food(
+          id: 7,
+          name: "Seafood spaghetti tomato sauce",
+          description:
+              "Shrimp, squid and mushrooms in signature Pesto sauce, topped with Mozzarella cheese",
+          price: "125.000",
+          image: "assets/images/spaghety.jpg",
+        ),
+        Food(
+          id: 8,
+          name: "Seafood spaghetti with black pepper sauce",
+          description:
+              "Shrimp, squid and mushrooms in signature Pesto sauce, topped with Mozzarella cheese",
+          price: "125.000",
+          image: "assets/images/spaghety.jpg",
+        ),
+        Food(
+          id: 9,
+          name: "minced beef spaghetti with tomato sauce",
+          description:
+              "Shrimp, squid and mushrooms in signature Pesto sauce, topped with Mozzarella cheese",
+          price: "125.000",
+          image: "assets/images/spaghety.jpg",
+        ),
+        Food(
+          id: 10,
+          name: "Spaghetti with vegetable in marinara sauce",
+          description:
+              "Shrimp, squid and mushrooms in signature Pesto sauce, topped with Mozzarella cheese",
+          price: "125.000",
+          image: "assets/images/spaghety.jpg",
+        )
+      ],
+    ),
   ];
 }

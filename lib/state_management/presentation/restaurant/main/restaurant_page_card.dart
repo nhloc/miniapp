@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:get/get.dart';
+
+import '../food/restaurant_food_screen.dart';
 
 class RestaurantCard extends StatelessWidget {
   const RestaurantCard(
@@ -22,7 +25,13 @@ class RestaurantCard extends StatelessWidget {
           child: Image.asset(image!),
         ),
         TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Get.to(RestaurantFoodScreen(
+                image: image!,
+                name: name!,
+                address: address!,
+              ));
+            },
             child: Text(
               name!,
               style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
