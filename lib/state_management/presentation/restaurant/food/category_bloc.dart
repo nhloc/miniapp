@@ -32,7 +32,7 @@ class FoodItem {
   bool get isCategory => category != null;
 }
 
-class FoodBloC with ChangeNotifier {
+class CategoryBloC with ChangeNotifier {
   late TabController tabController;
   final ScrollController scrollController = ScrollController();
 
@@ -55,7 +55,8 @@ class FoodBloC with ChangeNotifier {
         offsetFrom += DefaultData.foodlist[i - 1].foods.length * heightFood;
       }
       if (i < DefaultData.foodlist.length - 1) {
-        offsetTo = offsetFrom + DefaultData.foodlist[i].foods.length * heightFood;
+        offsetTo =
+            offsetFrom + DefaultData.foodlist[i].foods.length * heightFood;
       } else {
         offsetTo = double.infinity;
       }
@@ -93,7 +94,7 @@ class FoodBloC with ChangeNotifier {
       tabs[i] = tabs[i].copyWith(condition);
     }
     notifyListeners();
-    
+
     scrollController.animateTo(selectedTab.offsetFrom,
         duration: const Duration(microseconds: 500), curve: Curves.bounceOut);
   }
